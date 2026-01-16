@@ -1,0 +1,134 @@
+{
+  "epicId": "EPIC-2024-001",
+  "epicKey": "PORT-001",
+  "epicSummary": "User Portfolio Dashboard Revamp",
+  "epicDescription": "Redesign and modernize the user portfolio dashboard with real-time insights, responsive UI, and automated deployments.",
+  "owner": "product-owner-001",
+  "status": "In Progress",
+  "sections": {
+    "frontend": {
+      "functional_requirements": "Enable users to view real-time portfolio performance, filter investments by asset class and date ranges, search through holdings, and view visual insights through an interactive dashboard UI with responsive design across all devices.",
+      "technical_requirements": "Implement using React 18 and TypeScript for type safety; use Tailwind CSS for styling and responsive design, integrate Recharts for data visualization and interactive charts. Ensure full responsiveness across desktop, tablet, and mobile devices. Implement accessibility compliance (WCAG 2.1) with keyboard navigation and screen reader support. Integrate with backend APIs for real-time data updates using WebSocket or Server-Sent Events.",
+      "devops_requirements": "Automate the build, deployment, and monitoring of frontend application to ensure reliability, traceability, and quick rollbacks. Use GitHub Actions for CI/CD pipeline with automated testing, linting, and security scanning. Dockerize the React application and deploy to a Kubernetes cluster with Helm charts. Set up Prometheus and Grafana for observability with alerts on application errors, performance metrics, and user experience monitoring. Implement blue-green deployment strategy for zero-downtime updates.",
+      "stories": [
+        {
+          "storyId": "PORT-FE-001",
+          "summary": "Implement responsive portfolio dashboard layout",
+          "description": "Rebuild the portfolio dashboard using React 18 and Tailwind CSS. Create responsive layout components that work seamlessly across desktop, tablet, and mobile devices. Implement proper component structure with reusable UI components.",
+          "assignee": "Aditi Mehra",
+          "status": "In Progress",
+          "storyPoints": 5,
+          "priority": "High",
+          "labels": ["UI", "React", "Responsive", "Components"]
+        },
+        {
+          "storyId": "PORT-FE-002",
+          "summary": "Integrate charting library for performance graphs",
+          "description": "Use Recharts to visualize user portfolio trends, investment distributions, and performance metrics. Create interactive charts with tooltips, zoom functionality, and responsive design.",
+          "assignee": "Karan Gupta",
+          "status": "To Do",
+          "storyPoints": 3,
+          "priority": "Medium",
+          "labels": ["Charts", "Data Visualization", "Recharts"]
+        },
+        {
+          "storyId": "PORT-FE-003",
+          "summary": "Implement real-time portfolio data integration",
+          "description": "Connect frontend to backend APIs for real-time portfolio performance updates. Implement WebSocket or Server-Sent Events for live data streaming and automatic UI updates.",
+          "assignee": "Priya Sharma",
+          "status": "To Do",
+          "storyPoints": 8,
+          "priority": "High",
+          "labels": ["Real-time", "WebSocket", "API Integration"]
+        },
+        {
+          "storyId": "PORT-FE-004",
+          "summary": "Add investment filtering and search functionality",
+          "description": "Implement advanced filtering capabilities for investments by asset class, performance metrics, date ranges, and search functionality with autocomplete and suggestions.",
+          "assignee": "Vikram Patel",
+          "status": "To Do",
+          "storyPoints": 5,
+          "priority": "Medium",
+          "labels": ["Filtering", "Search", "UX"]
+        },
+        {
+          "storyId": "PORT-FE-005",
+          "summary": "Ensure WCAG 2.1 accessibility compliance",
+          "description": "Implement accessibility features including keyboard navigation, screen reader support, proper ARIA labels, color contrast compliance, and focus management throughout the application.",
+          "assignee": "Neha Agarwal",
+          "status": "To Do",
+          "storyPoints": 5,
+          "priority": "Medium",
+          "labels": ["Accessibility", "WCAG", "Compliance"]
+        }
+      ]
+    },
+    "backend": {
+      "functional_requirements": "Provide fast and reliable APIs for fetching portfolio data, calculating real-time performance metrics, serving historical data, and delivering real-time updates to the UI. Support user authentication, authorization, and secure data access with proper error handling and data validation.",
+      "technical_requirements": "Develop microservices using Spring Boot with Java 17 and PostgreSQL as the primary data store. Implement Redis caching for frequently accessed data and session management. Ensure all endpoints are secured using JWT authentication with role-based authorization. Include comprehensive API versioning strategy and OpenAPI documentation. Implement proper logging, monitoring, and health checks. Use WebSocket or Server-Sent Events for real-time data streaming.",
+      "devops_requirements": "Automate the build, deployment, and monitoring of all portfolio services to ensure reliability, traceability, and quick rollbacks. Use GitHub Actions for CI/CD with automated testing, code quality checks, and security scanning. Dockerize all components and deploy to a Kubernetes cluster with Helm charts. Set up Prometheus and Grafana for observability with alerts on API errors, latency, and system performance. Implement database migration strategies and backup procedures.",
+      "stories": [
+        {
+          "storyId": "PORT-BE-001",
+          "summary": "Create portfolio summary API endpoint",
+          "description": "Expose REST endpoint `/api/v1/portfolio/summary` to fetch user holdings, asset classes, total value, and basic performance metrics. Include proper error handling and data validation.",
+          "assignee": "Rahul Singh",
+          "status": "In Review",
+          "storyPoints": 8,
+          "priority": "High",
+          "labels": ["API", "Spring Boot", "Microservices"]
+        },
+        {
+          "storyId": "PORT-BE-002",
+          "summary": "Implement caching for portfolio data",
+          "description": "Add Redis caching for portfolio summaries, user sessions, and frequently accessed data to reduce database load and improve response times. Implement cache invalidation strategies.",
+          "assignee": "Sneha Reddy",
+          "status": "In Progress",
+          "storyPoints": 5,
+          "priority": "Medium",
+          "labels": ["Performance", "Caching", "Redis"]
+        },
+        {
+          "storyId": "PORT-BE-003",
+          "summary": "Develop real-time portfolio updates service",
+          "description": "Create WebSocket or Server-Sent Events endpoint for real-time portfolio value updates, price changes, and performance metrics. Ensure scalable real-time data delivery.",
+          "assignee": "Amit Kumar",
+          "status": "To Do",
+          "storyPoints": 8,
+          "priority": "High",
+          "labels": ["Real-time", "WebSocket", "Streaming"]
+        },
+        {
+          "storyId": "PORT-BE-004",
+          "summary": "Implement portfolio performance calculation engine",
+          "description": "Develop service to calculate portfolio returns, gains/losses, performance comparisons, historical analysis, and risk metrics. Include support for different calculation methods and time periods.",
+          "assignee": "Deepak Verma",
+          "status": "To Do",
+          "storyPoints": 13,
+          "priority": "High",
+          "labels": ["Performance", "Calculations", "Business Logic"]
+        },
+        {
+          "storyId": "PORT-BE-005",
+          "summary": "Create JWT authentication and authorization system",
+          "description": "Implement secure authentication endpoints with JWT token generation, validation, refresh token mechanism, and role-based authorization for different user types and permissions.",
+          "assignee": "Anita Joshi",
+          "status": "To Do",
+          "storyPoints": 8,
+          "priority": "High",
+          "labels": ["Security", "Authentication", "JWT"]
+        },
+        {
+          "storyId": "PORT-BE-006",
+          "summary": "Implement API documentation and versioning",
+          "description": "Add comprehensive OpenAPI/Swagger documentation for all endpoints and implement API versioning strategy to support backward compatibility and future enhancements.",
+          "assignee": "Rajesh Gupta",
+          "status": "To Do",
+          "storyPoints": 3,
+          "priority": "Medium",
+          "labels": ["Documentation", "OpenAPI", "Versioning"]
+        }
+      ]
+    }
+  }
+}
